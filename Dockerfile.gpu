@@ -15,8 +15,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Установим ключевые библиотеки для ML/DL (GPU)
 RUN pip install --upgrade pip && \
-    pip install \
-    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
+    pip install --no-cache-dir \
+    torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && \
+    pip install --no-cache-dir \
+    tensorflow \
     scikit-learn \
     pandas \
     numpy \
